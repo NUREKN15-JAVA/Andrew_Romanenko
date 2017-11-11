@@ -15,7 +15,16 @@ public class User {
     private String lastName;
     private Date dateOfBirth;
 
+    public User() {
 
+    }
+
+    public User(Long id, String firstName, String lastName, Date now) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = now;
+    }
     public Long getId() {
         return id;
     }
@@ -65,4 +74,20 @@ public class User {
         int year = calendar.get(Calendar.YEAR);
         return currentYear - year;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        return this.getId().equals(((User) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        if (this.getId() == null) {
+            return 0;
+        }
+        return this.getId().hashCode();
+    }
 }
+
