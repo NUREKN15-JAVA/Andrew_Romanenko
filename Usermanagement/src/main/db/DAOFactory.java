@@ -15,7 +15,7 @@ import java.util.Properties;
 
 
 public abstract class DAOFactory {
-    protected static final String USER_DAO = "user.dao";
+    protected static final String USER_DAO = "main.db.UserDAO";
     private static String DAO_FACTORY = "dao.factory";
     protected static Properties properties;
     private static DAOFactory instance;
@@ -24,7 +24,7 @@ public abstract class DAOFactory {
         InputStream inputStream;
         properties = new Properties();
         try {
-            inputStream = new FileInputStream("src/main/resources/settings.properties");
+            inputStream = new FileInputStream("src/main/res/settings.properties");
             properties.load(inputStream);
         } catch (IOException e) {
             throw new RuntimeException();

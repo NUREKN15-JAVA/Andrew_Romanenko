@@ -21,13 +21,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
 
-
-
 /**
  * Author andy_
  * created 06.11.2017.
  */
-
 
 
 public class MainFrameTest extends JFCTestCase {

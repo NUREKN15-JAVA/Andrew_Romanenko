@@ -7,6 +7,7 @@ import main.db.UserDAO;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 /**
@@ -52,5 +53,15 @@ public class MockUserDAO implements UserDAO {
     @Override
     public void setConnectionFactory(ConnectionFactory connectionFactory) {
 
+    }
+    @Override
+    public Collection find(String firstName, String lastName) throws DatabaseException {
+        Collection<User> foundUsers = new LinkedList<>();
+        for (Map.Entry<Long, User> user : users.entrySet()) {
+            if (user.getValue().getFirstName().equals(firstName) && user.getValue().getLastName().equals(lastName)) {
+                foundUsers.add(user.getValue());
+            }
+        }
+        return foundUsers;
     }
 }

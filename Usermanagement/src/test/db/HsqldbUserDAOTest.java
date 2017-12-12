@@ -42,7 +42,7 @@ public class HsqldbUserDAOTest extends DatabaseTestCase {
 
     @Override
     protected IDataSet getDataSet() throws Exception {
-        InputStream is = new FileInputStream(new File("src\\test\\resources\\usersDataSet.xml"));
+        InputStream is = new FileInputStream(new File("src\\test\\res\\usersDataSet.xml"));
         IDataSet iDataSet = new XmlDataSet(is);
         return iDataSet;
     }
@@ -62,7 +62,7 @@ public class HsqldbUserDAOTest extends DatabaseTestCase {
     public void testCreate() {
         try {
             User user = new User();
-            user.setFirstName("Sergey");
+            user.setFirstName("Ivan");
             user.setLastName("Ivanov");
             user.setDateOfBirth(new Date());
             Assert.assertNull(user.getId());

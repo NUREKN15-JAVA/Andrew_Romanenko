@@ -11,8 +11,7 @@ public class DAOFactoryImpl extends DAOFactory {
 
         HsqldbUserDAO userDAO;
         try {
-          //  Class clazz = Class.forName(properties.getProperty(USER_DAO));
-            // userDAO = (HsqldbUserDAO) clazz.newInstance();
+
             userDAO = new HsqldbUserDAO();
             userDAO.setConnectionFactory(getConnectionFactory());
         } catch (Exception e) {
